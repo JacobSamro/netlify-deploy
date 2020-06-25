@@ -1,0 +1,28 @@
+name: 'Netlify Deploy'
+author: 'Jacob Samro'
+description: 'Github Action - Deploy to Netlify '
+
+inputs:
+  NETLIFY_AUTH_TOKEN:
+    description: 'Netlify Auth Token'
+    required: true
+    default: ''
+
+  NETLIFY_SITE_ID:
+    description: 'ID of your Site'
+    required: true
+    default: ''
+
+  FOLDER_TO_UPLOAD:
+    description: 'Folder to Upload'
+    required: true
+    default: 'dist'
+
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.NETLIFY_AUTH_TOKEN }}
+    - ${{ inputs.NETLIFY_SITE_ID }}
+    - ${{ inputs.FOLDER_TO_UPLOAD }}
