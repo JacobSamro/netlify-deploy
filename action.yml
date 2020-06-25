@@ -1,4 +1,4 @@
-name: 'Netlify Deploy'
+name: 'Deploy Site to Netlify'
 author: 'Jacob Samro'
 description: 'Github Action - Deploy to Netlify '
 
